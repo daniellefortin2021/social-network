@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/daniellefortin2021/social-network/issues"
   },
-  "homepage": "https://github.com/daniellefortin2021/social-network#readme"
+  "homepage": "https://github.com/daniellefortin2021/social-network#readme",
+  "dependencies": {
+    "mongoose": "^6.2.8"
+  }
 }
