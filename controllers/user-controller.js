@@ -17,7 +17,7 @@ const userController = {
         .then(dbUserData => {
             //if no user found, send 404
             if (!dbUserData) {
-                res.stauts(404).json({ message: 'No user found with this is'})
+                res.status(404).json({ message: 'No user found with this is'})
                 return;
             }
             res.json(dbUserData);
