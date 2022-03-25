@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
-const ThoughtSchema = new Schema ({
-
+const ThoughtSchema = new Schema (
+    {
     toughtText: {
         type: String
     },
@@ -15,8 +15,16 @@ const ThoughtSchema = new Schema ({
     reactions: {
 
     }
+    },
+        {
+            toJSON: {
+                virtuals: true,
+                getters: true
+            },
+            id: false
+        }
 
-});
+);
 
 const Thought = model('Thought', ThoughtSchema);
 

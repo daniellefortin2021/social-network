@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const { User } = require('.');
-
 
 const UserSchema = new Schema (
     {
@@ -24,12 +22,12 @@ const UserSchema = new Schema (
             virtuals: true,
             getters: true
         },
-        
+        id: false
     }
 )
 
 //get total count of friends 
 
-const Users = model('Users', UserSchema);
+const User = model('Users', UserSchema);
 
-module.exports = Users
+module.exports = User
