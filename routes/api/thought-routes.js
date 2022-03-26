@@ -13,7 +13,7 @@ const {
     //api/thoughts
 router.route('/').get(getAllThoughts);
 
-router.route('/:thoughtId').get(getOneThought).put(updateThought)
+router.route('/:id').get(getOneThought).put(updateThought)
 
 //create thought
 router.route('/:userId').post(addThought);
