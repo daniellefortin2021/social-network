@@ -26,7 +26,7 @@ const thoughtController = {
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId},
-            { $push: { reaction: body } },
+            { $push: { reactions: body } },
             { new: true }
         )
         .then(dbUserData => {
@@ -43,7 +43,7 @@ const thoughtController = {
     removeReaction({ params }, res ){
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
-            { $pull: { reaction: { reactionId: params.reactionId } } },
+            { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true }
         )
         .then(dbUserData => res.json(dbUserData))

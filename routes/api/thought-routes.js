@@ -19,7 +19,7 @@ router.route('/:thoughtId').get(getOneThought).put(updateThought)
 router.route('/:userId').post(addThought);
 
 //api/thoughts/userId
-router.route('/:userId/:thoughtId').put(addReaction).delete(removeThought);
+router.route('/:userId/:thoughtId').post(addReaction).delete(removeThought);
 
 // remove reaction
 router.route('/:userId/:commentId/:reactionId').delete(removeReaction);
