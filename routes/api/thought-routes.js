@@ -7,13 +7,23 @@ const {
     getOneThought, 
     updateThought } = require('../../controllers/thought-controller');
 
+
+    //api/thoughts
 router.route('/').get(getAllThoughts);
 
-router.route('/:id').get(getOneThought).put(updateThought).delete(removeThought)
+router.route('/:thoughtId').put(updateThought)
 
+//create thought
 router.route('/:userId').post(addThought);
 
-//add reaction
-//remove reaction
+//api/thoughts/userId
+router.route('/:userId/:thoughtId').delete(removeThought);
 
-module.exports = router;
+
+//delete replies /:userId/:thoughtId/:replyId
+
+//add reaction /api/pizzaId/commentId
+
+//remove reaction /api/pizzaId/commentId/replyId
+
+module.exports = router

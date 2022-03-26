@@ -5,12 +5,12 @@ const ThoughtSchema = new Schema (
     toughtText: {
         type: String
     },
+    username: {
+        type: String
+    },
     createdAt: {
         type: Date,
         default: Date.now
-    },
-    username: {
-        type: String
     },
     reactions: {
 
