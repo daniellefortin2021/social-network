@@ -26,7 +26,7 @@ const thoughtController = {
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId},
-            { $push: { reactions: body } },
+            { $addToSet: { reactions: body } },
             { new: true }
         )
         .then(dbUserData => {
@@ -46,7 +46,13 @@ const thoughtController = {
             { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true }
         )
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbUserData => {
+            if(!dbUserData) {
+                res.status(404).json({ message: 'Not userfound with this id'})
+                return;
+            }
+            res.json(dbUserData);
+        })
         .catch(err => res.json(err));
     },
 
